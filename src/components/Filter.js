@@ -3,18 +3,21 @@ import React from 'react';
 const Filter = (props) => {
 
    const getInputValue = (event) => {
-      const newValue = event.target.value;
+      event.preventDefault();
+      const newValue = event.currentTarget.value;
       props.handleInputValue(newValue)
+      
    }
 
    return(
 
       <div className="character-detail">
          <form>
-            <label htmlFor="name">Write character's name:</label>
+            <label htmlFor="name">Browse your character:</label>
             <input id="name"
                   type="text" 
-                  name="name" 
+                  name="name"
+                  placeholder="Ej.Morty"
                   value={props.inputValue}
                   onChange={getInputValue}
             />

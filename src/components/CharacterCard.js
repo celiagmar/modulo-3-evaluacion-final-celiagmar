@@ -2,18 +2,16 @@ import React from 'react';
 
 const CharacterCard = (props) => {
    return (
-      <li className="character" key={props.id}>
+      <div className="character">
          <img src={props.image} alt={props.name}/>
          <div className="character-name">
             <h3>{props.name}</h3>
          </div>
-         <div className="character-specie">
-            {props.specie}
+         <div className="character-species">
+            {props.species}
          </div>
-      </li>
+      </div>
    )
 }
-
-
 
 export default CharacterCard;

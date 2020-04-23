@@ -1,13 +1,14 @@
 import React from 'react';
 import logo from '../images/logo.png';
+import { Link } from 'react-router-dom';
 
 
 const Header = () => {
    return(
       <header className="header">
-         {/* <Link to="/"> */}
+         <Link to="/">
             <img src={logo} alt="Rick and Morty logo"/>
-         {/* </Link> */}
+         </Link>
       </header>
    )
 }
