@@ -3,11 +3,12 @@ import CharacterCard from './CharacterCard';
 
 const CharacterList = (props) => {
 
-   const {dataList} = props;
+   const {dataList,inputValue} = props;
 
    return (
       <ul className="character-list">
          {dataList
+         .filter(charObj => inputValue === '' || charObj.name.toLowerCase().includes(inputValue))
          .map(charObj =>
             <CharacterCard
                key={charObj.id}

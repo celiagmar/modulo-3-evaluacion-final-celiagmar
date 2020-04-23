@@ -1,13 +1,19 @@
 import React from 'react';
 import '../stylesheets/App.css';
+import Header from './Header';
 import { fetchCharacters } from '../services/FetchData';
 import CharacterList from './CharacterList';
+import Filter from './Filter';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
+
+    this.handleInputValue=this.handleInputValue.bind(this)
+
     this.state={
-      data:[]
+      data:[],
+      inputValue:''
     }
   }
 
@@ -20,15 +26,21 @@ class App extends React.Component {
       })
   }
 
+  handleInputValue(value) {
+    this.setState({
+      inputValue: value
+    });
+  };
+
   render() {
 
-    const {data} = this.state;
+    const {data, inputValue} = this.state;
 
     return (
       <div className="App">
-        <header className="App-header">
-          <CharacterList dataList={data}/>
-        </header>
+        <Header/>
+          <Filter inputValue={inputValue} handleInputValue={this.handleInputValue}/>
+          <CharacterList dataList={data} inputValue={inputValue}/>
       </div>
     );
   }
