@@ -13,11 +13,17 @@ class App extends React.Component {
 
     this.handleInputValue=this.handleInputValue.bind(this)
     this.renderCharacterDetail=this.renderCharacterDetail.bind(this)
+    this.applyFilter=this.applyFilter.bind(this);
 
     this.state={
       data:[],
-      inputValue:''
+      inputValue:'',
+      isExisting:true
     }
+  }
+
+  componentDidUpdate() {
+    localStorage.setItem('infoValue', JSON.stringify(this.state.inputValue))
   }
 
   componentDidMount() {
@@ -27,6 +33,12 @@ class App extends React.Component {
           data:data.results
         })
       })
+    const infoValue = JSON.parse(localStorage.getItem('infoValue'))
+      if (infoValue !== null) {
+        this.setState({
+          inputValue: infoValue
+        })
+      }
   }
 
   handleInputValue(value) {
@@ -35,8 +47,8 @@ class App extends React.Component {
     });
   };
 
+
   renderCharacterDetail(props) {
-    console.log(props)
     const urlId = props.match.params.id;
     const characters = this.state.data;
 
@@ -48,9 +60,16 @@ class App extends React.Component {
     }
   }
 
+  applyFilter() {
+    const object = this.state.data;
+    const inputValue = this.state.inputValue;
+      return object
+      .filter(charObj => inputValue === '' || charObj.name.toLowerCase().includes(inputValue))   
+  }
+
   render() {
 
-    const {data, inputValue} = this.state;
+    const {inputValue} = this.state;
 
     return (
       <div className="App">
@@ -59,7 +78,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path="/">
               <Filter inputValue={inputValue} handleInputValue={this.handleInputValue}/>
-              <CharacterList dataList={data} inputValue={inputValue}/>
+              <CharacterList dataList={this.applyFilter()} inputValue={inputValue}/>
             </Route>
             <Route path="/character/:id" render={this.renderCharacterDetail}/>
           </Switch>

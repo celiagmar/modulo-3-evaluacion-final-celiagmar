@@ -5,14 +5,13 @@ import { Link } from 'react-router-dom';
 const CharacterList = (props) => {
 
    const {dataList,inputValue} = props;
-   const error404 =  dataList.length === 0 ? <h3 className="alert">¡Loco! El personaje que buscas no éxiste en este universo. ¡Vuelve a probar!</h3> : ''
+   const error404 =  !dataList.length ? <h2 className="alert">There is any character called {inputValue} in this universe </h2> : "";
 
    return (
       <div className="pp">
          {error404}
          <ul className="character-list">
             {dataList
-            .filter(charObj => inputValue === '' || charObj.name.toLowerCase().includes(inputValue))
             .map(charObj => <li className="character-elem" key={charObj.id}>
                <Link to={`/character/${charObj.id}`}>
                   <CharacterCard

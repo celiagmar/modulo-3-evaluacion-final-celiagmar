@@ -3,16 +3,16 @@ import React from 'react';
 const Filter = (props) => {
 
    const getInputValue = (event) => {
-      event.preventDefault();
       const newValue = event.currentTarget.value;
       props.handleInputValue(newValue)
-      
    }
+
+   const preventDefault=(event)=>event.preventDefault();
 
    return(
 
       <div className="character-detail">
-         <form>
+         <form onSubmit={preventDefault}>
             <label htmlFor="name">Browse your character:</label>
             <input id="name"
                   type="text" 
