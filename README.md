@@ -46,5 +46,5 @@ Vamos a implementar una nueva funcionalidad: al hacer clic sobre la tarjeta de u
  - Como ejercicio extra os proponemos que la URL del detalle de personaje sea compartible, es decir, que  si visitamos esa URL directamente en el navegador se vea el detalle del personaje.
  - Y en el caso de que el usuario navegue a una URL inexistente debemos mostrar un mensaje del  tipo "El personaje que buscas no existe".
 
-## BONUS: Ordenación :x:
+## BONUS: Ordenación :page_facing_up:
    Ordenar alfabéticamente el listado.
