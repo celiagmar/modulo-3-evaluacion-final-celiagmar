@@ -7,9 +7,9 @@ const Filter = (props) => {
       props.handleInputValue(newValue)
    }
 
-   const preventDefault=(event)=>event.preventDefault();
+   const preventDefault = (event) => event.preventDefault();
 
-   return(
+   return (
 
       <div className="character-detail">
          <form onSubmit={preventDefault}>

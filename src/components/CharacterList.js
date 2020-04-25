@@ -5,13 +5,19 @@ import { Link } from 'react-router-dom';
 const CharacterList = (props) => {
 
    const {dataList,inputValue} = props;
-   const error404 =  !dataList.length ? <h2 className="alert">There is any character called {inputValue} in this universe </h2> : "";
+   const error =  !dataList.length ? <h2 className="alert">There is any character named {inputValue} in this universe! </h2> : "";
 
    return (
       <div className="pp">
-         {error404}
+         {error}
          <ul className="character-list">
-            {dataList
+
+         {dataList
+            .sort((a,b) =>{
+               if (a.name< b.name) {return -1}
+               if (a.name> b.name) {return 1}
+               return 0
+            })
             .map(charObj => <li className="character-elem" key={charObj.id}>
                <Link to={`/character/${charObj.id}`}>
                   <CharacterCard

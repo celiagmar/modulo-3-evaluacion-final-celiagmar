@@ -1,5 +1,5 @@
 import React from 'react';
-import '../stylesheets/App.css';
+import '../stylesheets/App.scss';
 import Header from './Header';
 import { fetchCharacters } from '../services/FetchData';
 import CharacterList from './CharacterList';
