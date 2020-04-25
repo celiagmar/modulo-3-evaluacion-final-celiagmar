@@ -5,6 +5,12 @@ import Emoji from './Emoji';
 const CharacterDetail = (props) => {
 
    return (
+      <React.Fragment>
+      <div className="button-container">
+         <Link to="/">
+            <button>Back</button>
+         </Link>
+      </div>
       <div className="detail-container">
          <img src={props.selectedCharacter.image} alt={props.selectedCharacter.name}></img>
          <h2>{props.selectedCharacter.name}</h2>
@@ -16,12 +22,8 @@ const CharacterDetail = (props) => {
          <p>Status: 
             {props.selectedCharacter.status === "Alive" ? <Emoji symbol=" 💓 " label="alive"/> : <Emoji symbol=" ⚰️ " label="dead"/>}
          </p>
-            <div>
-               <Link to="/">
-                  <button>Back</button>
-               </Link>
-            </div>
       </div>
+      </React.Fragment>
    )
 }
 

@@ -1,15 +1,14 @@
 import React from 'react';
+import Emoji from './Emoji';
 
 const CharacterCard = (props) => {
    return (
       <div className="character">
-         <img src={props.image} alt={props.name}/>
-         <div className="character-name">
-            <h3>{props.name}</h3>
+         <div className="img-container">
+            <img src={props.image} alt={props.name}/>
          </div>
-         <div className="character-species">
-            {props.species}
-         </div>
+         <h3>{props.name}</h3>
+         <p>{props.species=== "Alien" ? <Emoji symbol=" 👽 " label="alien"/> : <Emoji symbol=" 👫 " label="human"/>}</p>
       </div>
    )
 }

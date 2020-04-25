@@ -1,0 +1,144 @@
+// Filter Style:
+
+.filter-container {
+
+   font-weight: bold;
+   font-size: 20px;
+
+   label {
+      color: white;
+   }
+
+   input {
+      padding: 3px;
+      border-radius: 5%;
+      margin-top:7px;
+      margin-bottom: 15px;
+      color: rgb(37, 37, 63);
+      
+      @media all and (min-width:768px) {
+         margin: 25px;
+      }
+   }
+}
+
+// Character not found style:
+
+.alert {
+   font-size: 45px;
+   color: white;
+   font-weight: bold;
+
+   @media all and (min-width:768px) {
+      font-size: 50px;
+   }
+
+   span {
+      color: rgb(10, 196, 87);
+   }
+}
+
+// Character list style: 
+
+.list-container .character-list {
+
+   height: 100%;
+       
+   .character-elem {
+      list-style: none;
+
+      @media all and (min-width:768px) {
+         margin: 8px;
+      }
+
+      .link {
+         text-decoration: none;
+      }
+
+      .character {
+         border-radius: 10%;
+         border: solid 3px rgb(10, 196, 87);
+         background-color: rgb(50, 183, 201);
+         width: 200px;
+         height: 250px;
+         margin-bottom: 10px;
+         margin: 20px auto;
+         padding-top: 20px;
+         color: rgb(37, 37, 63);
+         font-size: 20px;
+
+         h3 {
+            margin: 10px 0;
+         }
+
+         p {
+            margin: 10px 0;
+         }
+         
+         .img-container {
+            width: 125px;
+            height: 125px;
+            margin: auto;
+
+            img {
+               width: 100%;
+               border-radius: 50%;
+               border: solid 3px rgb(10, 196, 87);
+            }
+         }
+      }
+   }
+
+   @media all and (min-width:768px) {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+}
+
+// Character details style:
+
+.button-container {
+
+   @media all and (min-width:768px) {
+      padding-top: 60px;
+   }
+   
+   button {
+   width: 90px;
+   height: 40px;
+   margin-bottom: 20px;
+   background-color: rgb(50, 183, 201);
+   color: rgb(37, 37, 63);
+   font-weight: bold;
+   font-size: 18px;
+   border: solid 2px rgb(10, 196, 87);
+   }
+}
+.detail-container {
+   margin: auto;
+   width: 80%;
+   height: 80%;
+   background-color: transparent;
+   border: solid 2px rgb(50, 183, 201);
+   border-radius: 5%;
+   color: white;
+   font-weight: bold;
+   
+   img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10%;
+      margin-top: 20px;
+   }
+
+   h2 {
+      background-color: rgb(10, 196, 87);
+   }
+
+   @media all and (min-width:768px) {
+      margin-top: 40px;
+      font-size: 22px;
+   }
+}

@@ -11,7 +11,7 @@ const Filter = (props) => {
 
    return (
 
-      <div className="character-detail">
+      <div className="filter-container">
          <form onSubmit={preventDefault}>
             <label htmlFor="name">Browse your character:</label>
             <input id="name"

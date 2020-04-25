@@ -7,7 +7,9 @@ const Header = () => {
    return(
       <header className="header">
          <Link to="/">
-            <img src={logo} alt="Rick and Morty logo"/>
+            <div className="logo-container">
+               <img className="logo" src={logo} alt="Rick and Morty logo"/>
+            </div>
          </Link>
       </header>
    )

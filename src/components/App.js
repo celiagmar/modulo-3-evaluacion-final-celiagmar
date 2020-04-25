@@ -73,16 +73,18 @@ class App extends React.Component {
 
     return (
       <div className="App">
-        <Header/>
-        <main>
-          <Switch>
-            <Route exact path="/">
-              <Filter inputValue={inputValue} handleInputValue={this.handleInputValue}/>
-              <CharacterList dataList={this.applyFilter()} inputValue={inputValue}/>
-            </Route>
-            <Route path="/character/:id" render={this.renderCharacterDetail}/>
-          </Switch>
-        </main>
+        <div className="wrapper">
+          <Header/>
+          <main>
+            <Switch>
+              <Route exact path="/">
+                <Filter inputValue={inputValue} handleInputValue={this.handleInputValue}/>
+                <CharacterList dataList={this.applyFilter()} inputValue={inputValue}/>
+              </Route>
+              <Route path="/character/:id" render={this.renderCharacterDetail}/>
+            </Switch>
+          </main>
+        </div>
       </div>
     );
   }

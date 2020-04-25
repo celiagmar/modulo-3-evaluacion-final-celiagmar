@@ -1,8 +1,32 @@
+@import 'reset/normalize';
+@import 'layouts/header';
+@import 'layouts/characters';
+
 .App {
-  background-color: #282c34;
+
+  background: url(../images/starfall.gif) top center; 
+  // #282c34;
+
+  width: 100%;
   min-height: 100vh;
   text-align: center;
+  margin-top: 0;
+  padding-bottom: 20px;
+  font-family: 'Rajdhani', sans-serif;
+
+  .wrapper {
+    margin: 0 25px;
+
+    @media all and (min-width:768px) {
+      margin: 0 48px;
+    }
+
+    @media all and (min-width:1120px) {
+      margin: 0 auto;
+    }
+  }
 }
+
 
 // .App-logo {
 //   height: 40vmin;
