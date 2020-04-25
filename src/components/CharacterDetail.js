@@ -5,7 +5,15 @@ import PropTypes from 'prop-types';
 
 const CharacterDetail = (props) => {
 
-   return (
+   if (props.selectedCharacter === undefined) {
+      return(
+         <div className="not-found">
+            <p>There is nothing here. Go back home, please:</p>
+         </div>
+      )
+  } else {
+      
+      return (
       <React.Fragment>
       <div className="button-container">
          <Link to="/">
@@ -25,8 +33,9 @@ const CharacterDetail = (props) => {
          </p>
       </div>
       </React.Fragment>
-   )
-}
+      )
+   }
+};
 
 CharacterDetail.propTypes = {
    image: PropTypes.string,

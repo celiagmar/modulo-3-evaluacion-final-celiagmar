@@ -80,7 +80,7 @@ class App extends React.Component {
               <Route exact path="/">
                 <Filter inputValue={inputValue} handleInputValue={this.handleInputValue}/>
                 <CharacterList dataList={this.applyFilter()} inputValue={inputValue}/>
-              </Route>
+              </Route>2
               <Route path="/character/:id" render={this.renderCharacterDetail}/>
             </Switch>
           </main>
