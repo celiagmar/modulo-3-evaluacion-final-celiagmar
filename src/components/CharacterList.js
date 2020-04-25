@@ -2,6 +2,7 @@ import React from 'react';
 import CharacterCard from './CharacterCard';
 import { Link } from 'react-router-dom';
 import Emoji from './Emoji';
+import PropTypes from 'prop-types';
 
 const CharacterList = (props) => {
 
@@ -35,5 +36,12 @@ const CharacterList = (props) => {
    )
 }
 
+CharacterList.propTypes = {
+   image: PropTypes.string,
+   name: PropTypes.string,
+   species: PropTypes.string,
+   inputValue: PropTypes.string,
+   dataList: PropTypes.array
+}
 
 export default CharacterList;

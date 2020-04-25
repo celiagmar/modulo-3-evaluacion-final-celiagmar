@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Emoji from './Emoji';
+import PropTypes from 'prop-types';
 
 const CharacterDetail = (props) => {
 
@@ -25,6 +26,15 @@ const CharacterDetail = (props) => {
       </div>
       </React.Fragment>
    )
+}
+
+CharacterDetail.propTypes = {
+   image: PropTypes.string,
+   name: PropTypes.string,
+   species: PropTypes.string,
+   status: PropTypes.string,
+   origin: PropTypes.string,
+   episode: PropTypes.array,
 }
 
 export default CharacterDetail;

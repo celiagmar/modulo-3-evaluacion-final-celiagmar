@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 const Filter = (props) => {
 
@@ -26,5 +27,8 @@ const Filter = (props) => {
    )
 }
 
+Filter.propTypes = {
+   inputValue: PropTypes.string
+}
 
 export default Filter;
